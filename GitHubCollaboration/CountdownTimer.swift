@@ -55,5 +55,5 @@ struct CountdownTimer: View {
 
 
 #Preview {
-    SwiftUIView()
+    CountdownTimer()
 }
