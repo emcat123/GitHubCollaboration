@@ -7,16 +7,13 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct SwiftUIView: View {
     var body: some View {
-        VStack {
-            
-            
-        }
-        .padding()
+     
     }
 }
 
 #Preview {
-    ContentView()
+    SwiftUIView()
 }
+

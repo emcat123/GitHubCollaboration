@@ -11,7 +11,7 @@ import SwiftUI
 struct GitHubCollaborationApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CalendarSwiftUIView()
         }
     }
 }
