@@ -27,9 +27,12 @@ struct CountdownTimer: View {
                 
                 HStack {
                     TextField("Minutes", text: $inputMinutes)
+                        .foregroundColor(.black)
                         .keyboardType(.numberPad)
                         .textFieldStyle(.roundedBorder)
                         .frame(width: 100)
+                        
+                            
                     
                     Button("Start") {
                         if let minutes = Int(inputMinutes), minutes > 0 {
@@ -41,7 +44,7 @@ struct CountdownTimer: View {
                     .disabled(isActive)
                     .padding(.horizontal)
                     .padding(.vertical, 6)
-                    .background(Color.gray)
+                    .background(Color.white)
                     .foregroundColor(.black)
                     .cornerRadius(8)
                     
@@ -52,7 +55,7 @@ struct CountdownTimer: View {
                     }
                     .padding(.horizontal)
                     .padding(.vertical, 6)
-                    .background(Color.gray)
+                    .background(Color.white)
                     .foregroundColor(.black)
                     .cornerRadius(8)
                 }
