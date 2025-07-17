@@ -6,12 +6,23 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct GitHubCollaborationApp: App {
     var body: some Scene {
         WindowGroup {
-            CalendarSwiftUIView()
+            TabView {
+                ToDoListView()
+                    .tabItem { Label("To Do", systemImage: "checklist") }
+                    .modelContainer(for: ToDoItem.self)
+
+                CountdownTimer()
+                    .tabItem { Label("Timer", systemImage: "timer") }
+
+                CalendarSwiftUIView()
+                    .tabItem { Label("Calendar", systemImage: "calendar") }
+            }
         }
     }
 }
