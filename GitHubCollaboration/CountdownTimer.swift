@@ -18,13 +18,15 @@ struct CountdownTimer: View {
         VStack(spacing: 20) {
             Text("Time Remaining: \(timeString(from: timeRemaining))")
                 .font(.largeTitle)
+                .foregroundColor(.white) // White font
             
             HStack {
                 TextField("Minutes", text: $inputMinutes)
                     .keyboardType(.numberPad)
                     .textFieldStyle(.roundedBorder)
                     .frame(width: 100)
-                
+                    .foregroundColor(.white) // White text inside the field
+
                 Button("Start") {
                     if let minutes = Int(inputMinutes), minutes > 0 {
                         timeRemaining = minutes * 60
@@ -32,18 +34,15 @@ struct CountdownTimer: View {
                     }
                 }
                 .buttonStyle(.borderedProminent)
+                .tint(.white) // Button color
+                .foregroundColor(.blue) // Text color on button
             }
         }
         .padding()
-        .onReceive(timer) { _ in
-            guard isActive else { return }
-            if timeRemaining > 0 {
-                timeRemaining -= 1
-            } else {
-                isActive = false
-                // Add your action when the timer reaches zero
-            }
-        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity) // Fill the screen
+        .background(Color(red: 0.0, green: 0.0, blue: 0.5)) // Navy background
+        .ignoresSafeArea() // Extend behind notch
+        .preferredColorScheme(.dark) // Makes system elements light on dark background
     }
     
     func timeString(from seconds: Int) -> String {
@@ -52,7 +51,6 @@ struct CountdownTimer: View {
         return String(format: "%02d:%02d", minutes, seconds)
     }
 }
-
 
 #Preview {
     CountdownTimer()
