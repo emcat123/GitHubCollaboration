@@ -49,6 +49,12 @@ struct ToDoListView: View {
                 NewToDoView(showNewTask: $showNewTask, toDoItem: ToDoItem(title: "", isImportant: false))
             }            
         }.padding()
+         .background(
+                Color(red: 245/255, green: 208/255, blue: 244/255),
+            
+        
+        )
+
     }
     
     func deleteToDo(at offsets: IndexSet) {
