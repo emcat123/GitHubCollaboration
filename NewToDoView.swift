@@ -21,7 +21,7 @@ struct NewToDoView: View {
               .padding(12)
               .background(Color(.systemGroupedBackground))
                         
-            Toggle("Important?", isOn: $toDoItem.isImportant)
+            Toggle("Is it Important?", isOn: $toDoItem.isImportant)
 
             HStack {
                 Spacer()

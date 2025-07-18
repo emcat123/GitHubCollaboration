@@ -6,8 +6,21 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BD385F622E293B3900E6F03D /* NewToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD385F5F2E293B3900E6F03D /* NewToDoView.swift */; };
+		BD385F782E29542900E6F03D /* NotesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD385F772E29542900E6F03D /* NotesListView.swift */; };
+		BD385F7A2E29546500E6F03D /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD385F792E29546500E6F03D /* Notes.swift */; };
+		BD385F7C2E2954B700E6F03D /* NoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD385F7B2E2954B700E6F03D /* NoteDetailView.swift */; };
+		BD385F7E2E2955BC00E6F03D /* PreviewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD385F7D2E2955BC00E6F03D /* PreviewHelpers.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		A59B9D4B2E269B1400489A76 /* GitHubCollaboration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubCollaboration.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD385F5F2E293B3900E6F03D /* NewToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToDoView.swift; sourceTree = "<group>"; };
+		BD385F772E29542900E6F03D /* NotesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListView.swift; sourceTree = "<group>"; };
+		BD385F792E29546500E6F03D /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		BD385F7B2E2954B700E6F03D /* NoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailView.swift; sourceTree = "<group>"; };
+		BD385F7D2E2955BC00E6F03D /* PreviewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -33,6 +46,11 @@
 			isa = PBXGroup;
 			children = (
 				A59B9D4D2E269B1400489A76 /* GitHubCollaboration */,
+				BD385F5F2E293B3900E6F03D /* NewToDoView.swift */,
+				BD385F772E29542900E6F03D /* NotesListView.swift */,
+				BD385F7B2E2954B700E6F03D /* NoteDetailView.swift */,
+				BD385F7D2E2955BC00E6F03D /* PreviewHelpers.swift */,
+				BD385F792E29546500E6F03D /* Notes.swift */,
 				A59B9D4C2E269B1400489A76 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -119,6 +137,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD385F7C2E2954B700E6F03D /* NoteDetailView.swift in Sources */,
+				BD385F7E2E2955BC00E6F03D /* PreviewHelpers.swift in Sources */,
+				BD385F622E293B3900E6F03D /* NewToDoView.swift in Sources */,
+				BD385F782E29542900E6F03D /* NotesListView.swift in Sources */,
+				BD385F7A2E29546500E6F03D /* Notes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
