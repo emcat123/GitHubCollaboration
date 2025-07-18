@@ -14,14 +14,18 @@ struct GitHubCollaborationApp: App {
         WindowGroup {
             TabView {
                 ToDoListView()
-                    .tabItem { Label("To Do", systemImage: "checklist") }
+                    .tabItem { Label("To-Do List", systemImage: "checklist") }
                     .modelContainer(for: ToDoItem.self)
 
                 CountdownTimer()
-                    .tabItem { Label("Timer", systemImage: "timer") }
+                    .tabItem { Label("Countdown", systemImage: "timer") }
 
                 CalendarSwiftUIView()
                     .tabItem { Label("Calendar", systemImage: "calendar") }
+                
+                NotesListView()
+                .tabItem { Label("Notes", systemImage: "note.text")}
+                
             }
         }
     }
