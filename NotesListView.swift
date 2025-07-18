@@ -7,6 +7,20 @@
 
 import SwiftUI
 
+// Custom ButtonStyle: shows rounded background only while pressed
+struct RoundedPressButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding(10)
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(configuration.isPressed ? Color.white.opacity(0.7) : Color.clear)
+            )
+            .scaleEffect(configuration.isPressed ? 0.95 : 1.0) // subtle press scale effect
+            .animation(.easeOut(duration: 0.2), value: configuration.isPressed)
+    }
+}
+
 struct NotesListView: View {
     @State private var notes: [Note] = []
 
@@ -23,6 +37,7 @@ struct NotesListView: View {
                         Text("Notes")
                             .font(.system(size: 40))
                             .fontWeight(.black)
+                            .foregroundColor(Color(red: 101/255, green: 132/255, blue: 108/255))
 
                         Spacer()
 
@@ -30,6 +45,7 @@ struct NotesListView: View {
                             Image(systemName: "plus")
                                 .font(.title2)
                         }
+                        .buttonStyle(RoundedPressButtonStyle()) // Apply the custom press style
                     }
                     .padding()
 
@@ -39,7 +55,7 @@ struct NotesListView: View {
                                 Text(note.title)
                             }
                         }
-                        .onDelete(perform: deleteNote) // ✅ Add this to enable swipe-to-delete
+                        .onDelete(perform: deleteNote)
                     }
                     .listStyle(.plain)
                     .background(Color.clear)
@@ -55,7 +71,7 @@ struct NotesListView: View {
     }
 
     func deleteNote(at offsets: IndexSet) {
-        notes.remove(atOffsets: offsets) // ✅ Removes the selected note(s)
+        notes.remove(atOffsets: offsets)
     }
 }
 

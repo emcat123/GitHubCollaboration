@@ -1,24 +1,16 @@
-//
-//  HomeView.swift
-//  GitHubCollaboration
-//
-//  Created by Scholar on 7/18/25.
-//
-
 import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        NavigationView {
-            ZStack {
-                Color(red: 255/255, green: 245/255, blue: 225/255)
-                    .ignoresSafeArea()
-                Text("Welcome to Agenda!")
-                    .font(.title)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .multilineTextAlignment(.center)
-            }
-            .navigationTitle("Home")
+        ZStack {
+            Color(red: 255/255, green: 245/255, blue: 225/255)
+                .ignoresSafeArea()
+            Text("Welcome to Agenda!")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .foregroundColor(Color(red: 155/255, green: 147/255, blue: 135/255))  // Medium darker shade
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .multilineTextAlignment(.center)
         }
     }
 }

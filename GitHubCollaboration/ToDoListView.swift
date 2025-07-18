@@ -14,14 +14,13 @@ struct ToDoListView: View {
     @Environment(\.modelContext) var modelContext
 
     var body: some View {
-        VStack{
-            HStack{
+        VStack {
+            HStack {
                 Text("To Do List")
-                 .font(.system(size: 40))
-                 .fontWeight(.black)
-                
+                    .font(.system(size: 40))
+                    .fontWeight(.black)
+                    .foregroundColor(Color(red: 160/255, green: 135/255, blue: 159/255))  // Less dark shade
                 Spacer()
-                
                 Button {
                     withAnimation {
                         showNewTask = true
@@ -29,32 +28,33 @@ struct ToDoListView: View {
                 } label: {
                     Image(systemName: "plus")
                 }
-            }.padding()
+            }
+            .padding()
             
             Spacer()
             
             List {
-                ForEach (toDos) { toDoItem in
+                ForEach(toDos) { toDoItem in
                     if toDoItem.isImportant {
                         Text("‼️" + toDoItem.title)
                     } else {
                         Text(toDoItem.title)
                     }
-                }.onDelete(perform: deleteToDo)
+                }
+                .onDelete(perform: deleteToDo)
             }
             .padding(12)
             .listStyle(.plain)
             
             if showNewTask {
                 NewToDoView(showNewTask: $showNewTask, toDoItem: ToDoItem(title: "", isImportant: false))
-            }            
-        }.padding()
-         .background(
-                Color(red: 245/255, green: 208/255, blue: 244/255),
-            
-        
+            }
+        }
+        .padding()
+        .background(
+            Color(red: 245/255, green: 208/255, blue: 244/255)
+                .ignoresSafeArea()
         )
-
     }
     
     func deleteToDo(at offsets: IndexSet) {
