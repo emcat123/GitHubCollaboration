@@ -9,23 +9,45 @@ import SwiftUI
 
 struct NotesListView: View {
     @State private var notes: [Note] = []
-
+    
     var body: some View {
         NavigationView {
-            List {
-                ForEach($notes) { $note in
-                    NavigationLink(destination: NoteDetailView(note: $note)) {
-                        Text(note.title)
+            ZStack {
+                // Background color that fills the whole screen
+                Color(red: 169/255, green: 220/255, blue: 180/255)
+                    .ignoresSafeArea()
+                
+                VStack {
+                    // Custom header with title and plus button
+                    HStack {
+                        Text("Notes")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                        
+                        Spacer()
+                        
+                        Button(action: addNote) {
+                            Image(systemName: "plus")
+                                .font(.title2)
+                        }
                     }
+                    .padding()
+                    
+                    List {
+                        ForEach($notes) { $note in
+                            NavigationLink(destination: NoteDetailView(note: $note)) {
+                                Text(note.title)
+                            }
+                        }
+                    }
+                    .listStyle(.plain)
+                    .background(Color.clear)
                 }
             }
-            .navigationTitle("Notes")
-            .navigationBarItems(trailing: Button(action: addNote) {
-                Image(systemName: "plus")
-            })
+            .navigationBarHidden(true) // Hide default nav bar
         }
     }
-
+    
     func addNote() {
         let newNote = Note(title: "New Note", content: "")
         notes.append(newNote)
@@ -35,4 +57,3 @@ struct NotesListView: View {
 #Preview {
     NotesListView()
 }
-
