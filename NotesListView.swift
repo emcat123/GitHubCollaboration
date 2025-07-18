@@ -21,8 +21,8 @@ struct NotesListView: View {
                     // Custom header with title and plus button
                     HStack {
                         Text("Notes")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
+                            .font(.system(size: 40))
+                            .fontWeight(.black)
                         
                         Spacer()
                         
